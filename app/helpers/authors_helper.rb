@@ -1,5 +1,5 @@
 module AuthorsHelper
   def add (text)
-    text.reverse
+    text.upcase
   end
 end
