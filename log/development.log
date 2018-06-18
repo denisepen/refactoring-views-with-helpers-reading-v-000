@@ -116,3 +116,23 @@ RuntimeError ({"utf8"=>"✓", "authenticity_token"=>"3BTXrITkkYFGOajSL0aeDvQG0VK
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.8ms)
+
+
+Started POST "/posts" for 24.186.246.85 at 2018-06-18 16:00:10 +0000
+Cannot render console from 24.186.246.85! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3BTXrITkkYFGOajSL0aeDvQG0VKTlJfLtdXADbYwf97EbKhkNPsu0F7mgcsWIoqsvMerNcYrd/JeNQIlujcIMg==", "post"=>{"title"=>"New Post", "description"=>"New Post Description\r\n"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "New Post"], ["description", "New Post Description\r\n"], ["created_at", "2018-06-18 16:00:10.733487"], ["updated_at", "2018-06-18 16:00:10.733487"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.81.218:37434/posts/2
+Completed 302 Found in 11ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts/2" for 24.186.246.85 at 2018-06-18 16:00:10 +0000
+Cannot render console from 24.186.246.85! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
