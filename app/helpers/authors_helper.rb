@@ -1,5 +1,5 @@
 module AuthorsHelper
-  def add (text)
+  def cap (text)
     text.upcase
   end
 end
