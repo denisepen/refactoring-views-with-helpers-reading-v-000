@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'authors/show'
+  get 'authors/new'
 
   get 'test/index'
 
